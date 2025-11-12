@@ -104,47 +104,46 @@ export default function App() {
           width="100%"
           margin="0 auto"
         >
-          <Heading level={1} marginTop="4rem">My Notes App</Heading>
+          <Heading level={1}>My Notes App</Heading>
+
+          {/* Formularul de creare note – rămâne fixat, nu scrollabil */}
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
               direction="column"
               justifyContent="center"
+              alignItems="center"
               gap="2rem"
               padding="2rem"
             >
               <TextField
                 name="name"
-                placeholder="Note Name"
+                placeholder="Note name"
                 label="Note Name"
                 labelHidden
                 variation="quiet"
                 required
               />
+
               <TextField
                 name="description"
-                placeholder="Note Description"
+                placeholder="Note description"
                 label="Note Description"
                 labelHidden
                 variation="quiet"
                 required
               />
-              <View
-                name="image"
-                as="input"
-                type="file"
-                alignSelf={"end"}
-                accept="image/png, image/jpeg"
-              />
+
+              <View name="image" as="input" type="file" />
 
               <Button type="submit" variation="primary">
                 Create Note
               </Button>
             </Flex>
           </View>
-          <Divider />
+
+          {/* 🔹 Doar secțiunea de Current Notes va avea scroll lateral */}
           <Heading level={2}>Current Notes</Heading>
 
-          {/* Înlocuim <Grid> cu <View> și adăugăm clasa pentru responsive scroll */}
           <View className="notes-scroll-container" margin="3rem 0">
             {notes.map((note) => (
               <Flex
