@@ -143,13 +143,9 @@ export default function App() {
           </View>
           <Divider />
           <Heading level={2}>Current Notes</Heading>
-          <Grid
-            margin="3rem 0"
-            autoFlow="column"
-            justifyContent="center"
-            gap="2rem"
-            alignContent="center"
-          >
+
+          {/* Înlocuim <Grid> cu <View> și adăugăm clasa pentru responsive scroll */}
+          <View className="notes-scroll-container" margin="3rem 0">
             {notes.map((note) => (
               <Flex
                 key={note.id || note.name}
@@ -165,14 +161,17 @@ export default function App() {
                 <View>
                   <Heading level="3">{note.name}</Heading>
                 </View>
+
                 <Text fontStyle="italic">{note.description}</Text>
+
                 {note.image && (
                   <Image
                     src={note.image}
-                    alt={`visual aid for ${notes.name}`}
-                    style={{ width: 400 }}
+                    alt={`visual aid for ${note.name}`}
+                    style={{ width: "100%", maxWidth: "400px" }}
                   />
                 )}
+
                 <Button
                   variation="destructive"
                   onClick={() => deleteNote(note)}
@@ -181,7 +180,8 @@ export default function App() {
                 </Button>
               </Flex>
             ))}
-          </Grid>
+          </View>
+
           <Button onClick={signOut}>Sign Out</Button>
         </Flex>
       )}
