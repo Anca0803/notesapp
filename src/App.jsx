@@ -169,6 +169,7 @@ export default function App() {
                 padding="2rem"
                 borderRadius="5%"
                 className="box"
+                textAlign="center"
               >
                 <View>
                   <Heading level="3">{note.name}</Heading>
