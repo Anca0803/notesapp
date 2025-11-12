@@ -107,8 +107,18 @@ export default function App() {
           <Heading level={1}>My Notes App</Heading>
 
           {/* Formularul de creare note – rămâne fixat, nu scrollabil */}
-          <View as="form" margin="3rem 0" onSubmit={createNote} textAlign="center"
-            width="100%">
+          <View
+            as="form"
+            onSubmit={createNote}
+            style={{
+              textAlign: "center",
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center"
+            }}
+            margin="3rem 0"
+          >
             <Flex
               direction="column"
               justifyContent="center"
@@ -118,6 +128,7 @@ export default function App() {
               width="100%"
               maxWidth="500px"
               margin="0 auto"
+              style={{ textAlign: "center" }}   // 🔥 crucial pe Android
             >
               <TextField
                 name="name"
