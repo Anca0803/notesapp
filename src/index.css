@@ -95,6 +95,31 @@ body::before {
   margin: 2rem 0;
 }
 
+/* 📱 Mobile – transformă gridul în flex scrollabil */
+@media (max-width: 768px) {
+  .notes-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 1rem;
+    padding: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* scroll lin pe iPhone */
+  }
+
+  .notes-scroll-container::-webkit-scrollbar {
+    display: none;
+    /* ascunde bara de scroll pe mobil */
+  }
+
+  .box {
+    flex: 0 0 85%;
+    /* fiecare note ocupă ~85% din ecran */
+    scroll-snap-align: start;
+  }
+}
+
 
 
 
