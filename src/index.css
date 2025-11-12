@@ -150,3 +150,10 @@ body::before {
     background-color: white;
   }
 }
+
+@media (max-width: 600px) {
+  input[type="file"] {
+    transform: scale(1.25);
+    transform-origin: left center;
+  }
+}
