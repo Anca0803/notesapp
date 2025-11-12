@@ -107,13 +107,17 @@ export default function App() {
           <Heading level={1}>My Notes App</Heading>
 
           {/* Formularul de creare note – rămâne fixat, nu scrollabil */}
-          <View as="form" margin="3rem 0" onSubmit={createNote}>
+          <View as="form" margin="3rem 0" onSubmit={createNote} textAlign="center"
+            width="100%">
             <Flex
               direction="column"
               justifyContent="center"
               alignItems="center"
               gap="2rem"
               padding="2rem"
+              width="100%"
+              maxWidth="500px"
+              margin="0 auto"
             >
               <TextField
                 name="name"
