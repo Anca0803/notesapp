@@ -54,6 +54,11 @@ export default function App() {
 
   async function createNote(event) {
     event.preventDefault();
+    // ⛔ Block if there are already 10 notes
+    if (notes.length >= 10) {
+      alert("You can only create up to 10 notes.");
+      return;
+    }
     const form = new FormData(event.target);
     console.log(form.get("image").name);
 
@@ -96,7 +101,7 @@ export default function App() {
           justifyContent="center"
           alignItems="center"
           direction="column"
-          width="70%"
+          width="100%"
           margin="0 auto"
         >
           <Heading level={1}>My Notes App</Heading>
