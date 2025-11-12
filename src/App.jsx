@@ -133,7 +133,16 @@ export default function App() {
                 required
               />
 
-              <View name="image" as="input" type="file" />
+              <View
+                name="image"
+                as="input"
+                type="file"
+                style={{
+                  width: "100%",
+                  maxWidth: "400px",
+                }}
+                className="file-input"
+              />
 
               <Button type="submit" variation="primary">
                 Create Note

@@ -43,3 +43,12 @@
 .read-the-docs {
   color: #888;
 }
+
+@media (max-width: 768px) {
+  .file-input {
+    transform: scale(1.25);
+    /* 🔹 mărește butonul cu 25% pe mobil */
+    transform-origin: left center;
+    /* păstrează poziția corectă */
+  }
+}
